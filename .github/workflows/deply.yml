@@ -1,0 +1,33 @@
+name: 🚀 Manual Deploy to Netlify
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🧭 Checkout selected branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch }}
+
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: 📦 Install dependencies
+        run: npm install
+
+      - name: 🏗️ Build the project
+        run: npm run build
+
+      - name: 🌍 Install Netlify CLI
+        run: npm install -g netlify-cli
+
+      - name: 🚀 Deploy to Netlify
+        run: netlify deploy --dir=dist --prod --site "6d6bef29-a43b-44e0-a6fc-71e9cd8ced65"
+        env:
+          NETLIFY_AUTH_TOKEN: "nfp_2VEvVeVCwwDVZLYmdUBGpEfqxPaQpCeT87ce"
