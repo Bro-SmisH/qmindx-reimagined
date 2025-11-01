@@ -42,35 +42,35 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-12 sm:py-16 lg:py-20 bg-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
+        <div className="text-center mb-10 sm:mb-12 lg:mb-16 animate-fade-in-up">
           <span className="text-accent font-semibold text-sm uppercase tracking-wider">
             Our Services
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mt-4 mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mt-3 sm:mt-4 mb-4 sm:mb-6">
             Comprehensive Digital Solutions
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-xl sm:max-w-2xl mx-auto">
             From AI to blockchain, we deliver cutting-edge technology solutions 
             tailored to your business needs.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
           {services.map((service, index) => (
             <Card
               key={index}
-              className="group border-2 hover:border-accent transition-all duration-300 hover:shadow-hover animate-fade-in-up"
+              className="group border border-border hover:border-2 hover:border-accent transition-all duration-300 hover:shadow-hover animate-fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <CardHeader>
-                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                  <service.icon className="w-7 h-7 text-accent" />
+              <CardHeader className="space-y-4">
+                <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                  <service.icon className="w-6 h-6 sm:w-7 sm:h-7 text-accent" />
                 </div>
-                <CardTitle className="text-xl font-bold group-hover:text-accent transition-colors">
+                <CardTitle className="text-lg sm:text-xl font-bold group-hover:text-accent transition-colors">
                   {service.title}
                 </CardTitle>
               </CardHeader>
