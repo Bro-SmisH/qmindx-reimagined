@@ -69,6 +69,8 @@ const AboutSection = () => {
                 src="https://d3puhl2t51lebl.cloudfront.net/uploads/2025/05/salesforce-ai.svg"
                 alt="AI Innovation Illustration"
                 className="relative z-10 w-full h-auto animate-float"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
