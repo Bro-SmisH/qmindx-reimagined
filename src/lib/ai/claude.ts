@@ -76,7 +76,8 @@ export async function requestClaude(
       success: true,
       text: typeof maybeText === 'string' ? maybeText : JSON.stringify(maybeText),
     };
-  } catch (err: any) {
-    return { success: false, error: err?.message ?? String(err) };
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : String(err);
+    return { success: false, error: message };
   }
 }

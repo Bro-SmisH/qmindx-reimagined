@@ -31,8 +31,9 @@ const ClaudeDemo = () => {
       // Try to extract common fields
       const maybeText = data?.completion ?? data?.output ?? data?.text ?? data?.result ?? data;
       setResponse(typeof maybeText === 'string' ? maybeText : JSON.stringify(maybeText, null, 2));
-    } catch (err: any) {
-      setError(err.message || String(err));
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
+      setError(message);
     } finally {
       setLoading(false);
     }

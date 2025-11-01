@@ -101,7 +101,7 @@ const Industries = () => {
                     <div className="w-14 h-14 bg-gradient-to-br from-accent/20 to-accent/5 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                       <industry.icon className="w-7 h-7 text-accent" />
                     </div>
-                    <CardTitle className="text-xl font-bold group-hover:text-accent transition-colors">
+                    <CardTitle level={3} className="text-xl font-bold group-hover:text-accent transition-colors">
                       {industry.title}
                     </CardTitle>
                   </CardHeader>

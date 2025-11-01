@@ -19,6 +19,7 @@ const Careers = lazy(() => import("./pages/Careers"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("./pages/TermsOfService"));
+const Blog = lazy(() => import("./pages/Blog"));
 import Apply from "./pages/Apply";
 import ClaudeDemo from "./pages/ClaudeDemo";
 
@@ -42,8 +43,9 @@ const App = () => (
               <Route path="/case-studies" element={<CaseStudies />} />
               <Route path="/careers" element={<Careers />} />
                <Route path="/careers/apply" element={<Apply />} />
-               <Route path="/careers/apply/:role" element={<Apply />} />
+              <Route path="/careers/apply/:role" element={<Apply />} />
               <Route path="/demo/claude" element={<ClaudeDemo />} />
+              <Route path="/blog" element={<Blog />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/terms" element={<TermsOfService />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

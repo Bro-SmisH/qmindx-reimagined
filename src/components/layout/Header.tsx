@@ -75,6 +75,7 @@ const Header = () => {
     { name: "Industries", path: "/industries" },
     { name: "Case Studies", path: "/case-studies" },
     { name: "About", path: "/about" },
+    { name: "Blog", path: "/blog" },
     { name: "Careers", path: "/careers" },
     { name: "Contact", path: "/contact" },
   ];

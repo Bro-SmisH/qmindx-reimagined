@@ -70,7 +70,7 @@ const ServicesSection = () => {
                 <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                   <service.icon className="w-6 h-6 sm:w-7 sm:h-7 text-accent" />
                 </div>
-                <CardTitle className="text-lg sm:text-xl font-bold group-hover:text-accent transition-colors">
+                <CardTitle level={4} className="text-lg sm:text-xl font-bold group-hover:text-accent transition-colors">
                   {service.title}
                 </CardTitle>
               </CardHeader>

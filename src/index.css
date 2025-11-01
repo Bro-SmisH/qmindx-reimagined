@@ -25,9 +25,9 @@ All colors MUST be HSL.
 
   --muted: 210 40% 96%;
   /* Increased contrast for muted foreground to meet WCAG AA for smaller text */
-  --muted-foreground: 215 12% 30%;
+    --muted-foreground: 215 25% 40%;
 
-    --accent: 210 100% 60%;
+    --accent: 210 100% 45%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
