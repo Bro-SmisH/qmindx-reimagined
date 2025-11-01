@@ -68,7 +68,7 @@ const Services = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <main>
+  <main style={{ paddingTop: 'var(--header-offset)' }}>
         {/* Hero Section */}
         <section className="pt-32 pb-20 bg-gradient-hero">
           <div className="container mx-auto px-4">

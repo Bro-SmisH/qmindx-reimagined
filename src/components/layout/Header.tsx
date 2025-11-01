@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useLayoutEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -29,6 +29,21 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const headerRef = useRef<HTMLElement | null>(null);
+
+  // Measure header height and expose as CSS variable so pages can offset content
+  useLayoutEffect(() => {
+    const setHeaderOffset = () => {
+      const el = headerRef.current;
+      const height = el ? Math.ceil(el.getBoundingClientRect().height) : 64;
+      document.documentElement.style.setProperty("--header-offset", `${height}px`);
+    };
+
+    setHeaderOffset();
+    window.addEventListener("resize", setHeaderOffset);
+    return () => window.removeEventListener("resize", setHeaderOffset);
+  }, []);
+
   const navItems = [
     { name: "Home", path: "/" },
     { name: "Services", path: "/services" },
@@ -40,7 +55,7 @@ const Header = () => {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md ${
+    <header ref={headerRef} className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md ${
       isScrolled ? "shadow-elegant" : ""
     }`}>
       <nav className="container mx-auto px-4 py-3 md:py-4">
