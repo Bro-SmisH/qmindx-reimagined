@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/01cb6d4f-adc9-41d5-8f83-0e660cd19bda
+**URL**: (https://qmintx.netlify.app/)
 
 ## How can I edit this code?
 
