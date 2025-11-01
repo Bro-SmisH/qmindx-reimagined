@@ -6,6 +6,8 @@
 
 A modern, responsive web application built with React, TypeScript, and Tailwind CSS, designed to deliver an exceptional user experience with beautiful UI components and seamless navigation.
 
+**Deployed Website**: [https://qmintx.netlify.app/](https://qmintx.netlify.app/)
+
 ## Description
 
 QMindX Reimagined is a comprehensive web application that combines modern frontend technologies to create a powerful, accessible, and visually appealing user interface. The project leverages the latest React ecosystem tools and libraries to provide a robust foundation for building complex web applications.
