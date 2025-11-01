@@ -7,19 +7,20 @@ import { Shield, Mail, Phone } from "lucide-react";
 
 const PrivacyPolicy = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <Header />
-      <main>
-        {/* Hero Section */}
-        <section className="py-24 bg-muted/50">
-          <div className="container">
-            <div className="max-w-3xl">
-              <FadeIn>
-                <h1 className="text-5xl font-bold mb-6">Privacy Policy</h1>
-                <p className="text-xl text-muted-foreground">
+      <main id="main-content" role="main" style={{ paddingTop: 'var(--header-offset)' }}>
+        <section className="pt-32 pb-20 bg-gradient-hero">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <FadeInUp>
+                <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
+                  Privacy Policy
+                </h1>
+                <p className="text-lg text-primary-foreground/80">
                   Learn about how we collect, use, and protect your personal information.
                 </p>
-              </FadeIn>
+              </FadeInUp>
             </div>
           </div>
         </section>
