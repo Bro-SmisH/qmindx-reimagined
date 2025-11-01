@@ -152,7 +152,7 @@ const Careers = () => {
                         variant="outline" 
                         className="w-full group/btn"
                       >
-                        <Link to="/contact">
+                        <Link to={`/careers/apply/${encodeURIComponent(job.title)}`}>
                           Apply Now
                           <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                         </Link>

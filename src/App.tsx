@@ -19,6 +19,7 @@ const Careers = lazy(() => import("./pages/Careers"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("./pages/TermsOfService"));
+import Apply from "./pages/Apply";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +40,8 @@ const App = () => (
               <Route path="/industries" element={<Industries />} />
               <Route path="/case-studies" element={<CaseStudies />} />
               <Route path="/careers" element={<Careers />} />
+               <Route path="/careers/apply" element={<Apply />} />
+               <Route path="/careers/apply/:role" element={<Apply />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/terms" element={<TermsOfService />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
