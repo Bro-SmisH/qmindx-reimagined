@@ -1,0 +1,165 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - region "Notifications (F8)":
+      - list
+    - region "Notifications alt+T"
+    - generic [ref=e4]:
+      - banner [ref=e5]:
+        - navigation [ref=e6]:
+          - generic [ref=e7]:
+            - link "Q QmindX" [ref=e8] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e10]: Q
+              - generic [ref=e11]: QmindX
+            - navigation "Main navigation" [ref=e12]:
+              - link "Home" [ref=e13] [cursor=pointer]:
+                - /url: /
+              - link "Services" [ref=e14] [cursor=pointer]:
+                - /url: /services
+              - link "Industries" [ref=e15] [cursor=pointer]:
+                - /url: /industries
+              - link "Case Studies" [ref=e16] [cursor=pointer]:
+                - /url: /case-studies
+              - link "About" [ref=e17] [cursor=pointer]:
+                - /url: /about
+              - link "Careers" [ref=e18] [cursor=pointer]:
+                - /url: /careers
+              - link "Contact" [ref=e19] [cursor=pointer]:
+                - /url: /contact
+            - link "Get Started" [ref=e21] [cursor=pointer]:
+              - /url: /contact
+      - main [ref=e22]:
+        - generic [ref=e25]:
+          - text: Contact Us
+          - heading "Let's Build Something Amazing Together" [level=1] [ref=e26]
+          - paragraph [ref=e27]: Get in touch with our team to discuss your project and explore how we can help transform your business.
+        - generic [ref=e30]:
+          - link "Email Us info@qmindx.com" [ref=e31] [cursor=pointer]:
+            - /url: mailto:info@qmindx.com
+            - img [ref=e33]
+            - heading "Email Us" [level=3] [ref=e36]
+            - paragraph [ref=e37]: info@qmindx.com
+          - link "Call Us +1 (234) 567-890" [ref=e38] [cursor=pointer]:
+            - /url: tel:+1234567890
+            - img [ref=e40]
+            - heading "Call Us" [level=3] [ref=e42]
+            - paragraph [ref=e43]: +1 (234) 567-890
+          - link "Visit Us 123 Tech Street, Innovation City, IN 12345" [ref=e44] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e46]
+            - heading "Visit Us" [level=3] [ref=e49]
+            - paragraph [ref=e50]: 123 Tech Street, Innovation City, IN 12345
+          - 'link "Business Hours Mon - Fri: 9:00 AM - 6:00 PM" [ref=e51] [cursor=pointer]':
+            - /url: "#"
+            - img [ref=e53]
+            - heading "Business Hours" [level=3] [ref=e56]
+            - paragraph [ref=e57]: "Mon - Fri: 9:00 AM - 6:00 PM"
+        - generic [ref=e60]:
+          - generic [ref=e61]:
+            - text: Get in Touch
+            - heading "Let's Build Something Amazing Together" [level=2] [ref=e62]
+            - paragraph [ref=e63]: Ready to transform your business? Contact our team for a free consultation.
+          - generic [ref=e64]:
+            - generic [ref=e65]:
+              - generic [ref=e66]:
+                - text: Full Name *
+                - textbox "Full Name *" [ref=e67]:
+                  - /placeholder: John Doe
+              - generic [ref=e68]:
+                - text: Email Address *
+                - textbox "Email Address *" [ref=e69]:
+                  - /placeholder: john@example.com
+            - generic [ref=e70]:
+              - text: Phone Number (Optional)
+              - textbox "Phone Number (Optional)" [ref=e71]:
+                - /placeholder: +1 (234) 567-890
+            - generic [ref=e72]:
+              - text: Message *
+              - textbox "Message *" [ref=e73]:
+                - /placeholder: Tell us about your project...
+            - button "Send Message" [ref=e74] [cursor=pointer]:
+              - text: Send Message
+              - img
+        - iframe [ref=e79]:
+          
+      - contentinfo [ref=e80]:
+        - generic [ref=e81]:
+          - generic [ref=e82]:
+            - generic [ref=e83]:
+              - generic [ref=e84]:
+                - generic [ref=e86]: Q
+                - generic [ref=e87]: QmindX
+              - paragraph [ref=e88]: Leading technology company delivering cutting-edge AI and digital solutions for modern businesses.
+              - generic [ref=e89]:
+                - link "LinkedIn" [ref=e90] [cursor=pointer]:
+                  - /url: https://www.linkedin.com
+                  - img [ref=e91]
+                - link "Twitter" [ref=e95] [cursor=pointer]:
+                  - /url: https://twitter.com
+                  - img [ref=e96]
+                - link "GitHub" [ref=e98] [cursor=pointer]:
+                  - /url: https://github.com
+                  - img [ref=e99]
+            - generic [ref=e102]:
+              - heading "Services" [level=3] [ref=e103]
+              - list [ref=e104]:
+                - listitem [ref=e105]:
+                  - link "AI Solutions" [ref=e106] [cursor=pointer]:
+                    - /url: /services
+                - listitem [ref=e107]:
+                  - link "Web Development" [ref=e108] [cursor=pointer]:
+                    - /url: /services
+                - listitem [ref=e109]:
+                  - link "Mobile Apps" [ref=e110] [cursor=pointer]:
+                    - /url: /services
+                - listitem [ref=e111]:
+                  - link "Cloud Services" [ref=e112] [cursor=pointer]:
+                    - /url: /services
+                - listitem [ref=e113]:
+                  - link "Blockchain" [ref=e114] [cursor=pointer]:
+                    - /url: /services
+                - listitem [ref=e115]:
+                  - link "Digital Transformation" [ref=e116] [cursor=pointer]:
+                    - /url: /services
+            - generic [ref=e117]:
+              - heading "Company" [level=3] [ref=e118]
+              - list [ref=e119]:
+                - listitem [ref=e120]:
+                  - link "About Us" [ref=e121] [cursor=pointer]:
+                    - /url: /about
+                - listitem [ref=e122]:
+                  - link "Careers" [ref=e123] [cursor=pointer]:
+                    - /url: /careers
+                - listitem [ref=e124]:
+                  - link "Case Studies" [ref=e125] [cursor=pointer]:
+                    - /url: /case-studies
+                - listitem [ref=e126]:
+                  - link "Blog" [ref=e127] [cursor=pointer]:
+                    - /url: /blog
+            - generic [ref=e128]:
+              - heading "Contact" [level=3] [ref=e129]
+              - list [ref=e130]:
+                - listitem [ref=e131]:
+                  - img [ref=e132]
+                  - link "info@qmindx.com" [ref=e135] [cursor=pointer]:
+                    - /url: mailto:info@qmindx.com
+                - listitem [ref=e136]:
+                  - img [ref=e137]
+                  - link "+1 (234) 567-890" [ref=e139] [cursor=pointer]:
+                    - /url: tel:+1234567890
+                - listitem [ref=e140]:
+                  - img [ref=e141]
+                  - generic [ref=e144]: 123 Tech Street, Innovation City, IN 12345
+          - generic [ref=e146]:
+            - paragraph [ref=e147]: © 2025 QmindX. All rights reserved.
+            - generic [ref=e148]:
+              - link "Privacy Policy" [ref=e149] [cursor=pointer]:
+                - /url: /privacy
+              - link "Terms of Service" [ref=e150] [cursor=pointer]:
+                - /url: /terms
+  - link "Skip to content" [ref=e151] [cursor=pointer]:
+    - /url: "#main-content"
+```

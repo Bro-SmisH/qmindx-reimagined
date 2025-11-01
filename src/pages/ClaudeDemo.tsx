@@ -44,9 +44,11 @@ const ClaudeDemo = () => {
   <main id="main-content" style={{ paddingTop: 'var(--header-offset)' }}>
         <section className="py-20 container mx-auto px-4">
           <div className="max-w-3xl mx-auto bg-background rounded-2xl p-8">
+            <h1 className="sr-only">Claude Proxy Demo</h1>
             <h2 className="text-2xl font-bold mb-4">Claude Proxy Demo</h2>
             <p className="text-sm text-muted-foreground mb-4">This demo calls the Netlify serverless proxy at <code>/.netlify/functions/claude-proxy</code>. Make sure you set up CLAUDE_API_URL and CLAUDE_API_KEY in your Netlify environment before using.</p>
-            <Textarea value={prompt} onChange={(e) => setPrompt(e.target.value)} className="mb-4" />
+            <label htmlFor="claude-prompt" className="sr-only">Prompt</label>
+            <Textarea id="claude-prompt" value={prompt} onChange={(e) => setPrompt(e.target.value)} className="mb-4" aria-label="Claude prompt" />
             <div className="flex gap-4">
               <Button onClick={handleSubmit} disabled={loading}>{loading ? 'Calling...' : 'Call Claude'}</Button>
             </div>

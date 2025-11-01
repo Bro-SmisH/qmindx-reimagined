@@ -1,0 +1,249 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - region "Notifications (F8)":
+      - list
+    - region "Notifications alt+T"
+    - generic [ref=e4]:
+      - banner [ref=e5]:
+        - navigation [ref=e6]:
+          - generic [ref=e7]:
+            - link "Q QmindX" [ref=e8] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e10]: Q
+              - generic [ref=e11]: QmindX
+            - navigation "Main navigation" [ref=e12]:
+              - link "Home" [ref=e13] [cursor=pointer]:
+                - /url: /
+              - link "Services" [ref=e14] [cursor=pointer]:
+                - /url: /services
+              - link "Industries" [ref=e15] [cursor=pointer]:
+                - /url: /industries
+              - link "Case Studies" [ref=e16] [cursor=pointer]:
+                - /url: /case-studies
+              - link "About" [ref=e17] [cursor=pointer]:
+                - /url: /about
+              - link "Careers" [ref=e18] [cursor=pointer]:
+                - /url: /careers
+              - link "Contact" [ref=e19] [cursor=pointer]:
+                - /url: /contact
+            - link "Get Started" [ref=e21] [cursor=pointer]:
+              - /url: /contact
+      - main [ref=e22]:
+        - generic [ref=e25]:
+          - text: Careers at QmindX
+          - heading "Build the Future with Us" [level=1] [ref=e26]
+          - paragraph [ref=e27]: Join a team of passionate innovators working on cutting-edge technology projects that make a real impact.
+        - generic [ref=e30]:
+          - heading "Why Join QmindX?" [level=2] [ref=e31]
+          - generic [ref=e32]:
+            - generic [ref=e35]: Competitive salary and equity options
+            - generic [ref=e38]: Comprehensive health insurance
+            - generic [ref=e41]: Flexible work arrangements & remote options
+            - generic [ref=e44]: Professional development budget
+            - generic [ref=e47]: Latest tech stack and tools
+            - generic [ref=e50]: Collaborative, innovative culture
+        - generic [ref=e53]:
+          - generic [ref=e54]:
+            - heading "Open Positions" [level=2] [ref=e55]
+            - paragraph [ref=e56]: Explore our current opportunities and find your perfect role
+          - generic [ref=e57]:
+            - generic [ref=e58]:
+              - generic [ref=e59]:
+                - heading "Senior AI Engineer" [level=3] [ref=e60]
+                - generic [ref=e61]:
+                  - generic [ref=e62]:
+                    - img [ref=e63]
+                    - text: Remote / Hybrid
+                  - generic [ref=e66]:
+                    - img [ref=e67]
+                    - text: Full-time
+                  - generic [ref=e70]:
+                    - img [ref=e71]
+                    - text: $120K - $180K
+              - generic [ref=e73]:
+                - paragraph [ref=e74]: Lead AI/ML initiatives and build intelligent solutions for our enterprise clients.
+                - link "Apply Now" [ref=e75] [cursor=pointer]:
+                  - /url: /careers/apply/Senior%20AI%20Engineer
+                  - text: Apply Now
+                  - img
+            - generic [ref=e76]:
+              - generic [ref=e77]:
+                - heading "Full Stack Developer (React + Node)" [level=3] [ref=e78]
+                - generic [ref=e79]:
+                  - generic [ref=e80]:
+                    - img [ref=e81]
+                    - text: New York, NY / Remote
+                  - generic [ref=e84]:
+                    - img [ref=e85]
+                    - text: Full-time
+                  - generic [ref=e88]:
+                    - img [ref=e89]
+                    - text: $90K - $140K
+              - generic [ref=e91]:
+                - paragraph [ref=e92]: Develop scalable web applications using modern JavaScript frameworks and cloud technologies.
+                - link "Apply Now" [ref=e93] [cursor=pointer]:
+                  - /url: /careers/apply/Full%20Stack%20Developer%20(React%20%2B%20Node)
+                  - text: Apply Now
+                  - img
+            - generic [ref=e94]:
+              - generic [ref=e95]:
+                - heading "Blockchain Developer" [level=3] [ref=e96]
+                - generic [ref=e97]:
+                  - generic [ref=e98]:
+                    - img [ref=e99]
+                    - text: Remote
+                  - generic [ref=e102]:
+                    - img [ref=e103]
+                    - text: Full-time
+                  - generic [ref=e106]:
+                    - img [ref=e107]
+                    - text: $100K - $160K
+              - generic [ref=e109]:
+                - paragraph [ref=e110]: Build decentralized applications and smart contracts for Web3 projects.
+                - link "Apply Now" [ref=e111] [cursor=pointer]:
+                  - /url: /careers/apply/Blockchain%20Developer
+                  - text: Apply Now
+                  - img
+            - generic [ref=e112]:
+              - generic [ref=e113]:
+                - heading "Mobile Developer (iOS/Android)" [level=3] [ref=e114]
+                - generic [ref=e115]:
+                  - generic [ref=e116]:
+                    - img [ref=e117]
+                    - text: San Francisco, CA / Remote
+                  - generic [ref=e120]:
+                    - img [ref=e121]
+                    - text: Full-time
+                  - generic [ref=e124]:
+                    - img [ref=e125]
+                    - text: $95K - $150K
+              - generic [ref=e127]:
+                - paragraph [ref=e128]: Create beautiful, performant mobile applications for iOS and Android platforms.
+                - link "Apply Now" [ref=e129] [cursor=pointer]:
+                  - /url: /careers/apply/Mobile%20Developer%20(iOS%2FAndroid)
+                  - text: Apply Now
+                  - img
+            - generic [ref=e130]:
+              - generic [ref=e131]:
+                - heading "DevOps Engineer" [level=3] [ref=e132]
+                - generic [ref=e133]:
+                  - generic [ref=e134]:
+                    - img [ref=e135]
+                    - text: Remote
+                  - generic [ref=e138]:
+                    - img [ref=e139]
+                    - text: Full-time
+                  - generic [ref=e142]:
+                    - img [ref=e143]
+                    - text: $100K - $155K
+              - generic [ref=e145]:
+                - paragraph [ref=e146]: Manage cloud infrastructure, CI/CD pipelines, and ensure system reliability.
+                - link "Apply Now" [ref=e147] [cursor=pointer]:
+                  - /url: /careers/apply/DevOps%20Engineer
+                  - text: Apply Now
+                  - img
+            - generic [ref=e148]:
+              - generic [ref=e149]:
+                - heading "UX/UI Designer" [level=3] [ref=e150]
+                - generic [ref=e151]:
+                  - generic [ref=e152]:
+                    - img [ref=e153]
+                    - text: Remote / Hybrid
+                  - generic [ref=e156]:
+                    - img [ref=e157]
+                    - text: Full-time
+                  - generic [ref=e160]:
+                    - img [ref=e161]
+                    - text: $80K - $120K
+              - generic [ref=e163]:
+                - paragraph [ref=e164]: Design intuitive user experiences and beautiful interfaces for web and mobile applications.
+                - link "Apply Now" [ref=e165] [cursor=pointer]:
+                  - /url: /careers/apply/UX%2FUI%20Designer
+                  - text: Apply Now
+                  - img
+        - generic [ref=e168]:
+          - heading "Don't See the Right Role?" [level=2] [ref=e169]
+          - paragraph [ref=e170]: We're always looking for talented individuals. Send us your resume and let's explore opportunities together.
+          - link "Get in Touch" [ref=e171] [cursor=pointer]:
+            - /url: /contact
+      - contentinfo [ref=e172]:
+        - generic [ref=e173]:
+          - generic [ref=e174]:
+            - generic [ref=e175]:
+              - generic [ref=e176]:
+                - generic [ref=e178]: Q
+                - generic [ref=e179]: QmindX
+              - paragraph [ref=e180]: Leading technology company delivering cutting-edge AI and digital solutions for modern businesses.
+              - generic [ref=e181]:
+                - link "LinkedIn" [ref=e182] [cursor=pointer]:
+                  - /url: https://www.linkedin.com
+                  - img [ref=e183]
+                - link "Twitter" [ref=e187] [cursor=pointer]:
+                  - /url: https://twitter.com
+                  - img [ref=e188]
+                - link "GitHub" [ref=e190] [cursor=pointer]:
+                  - /url: https://github.com
+                  - img [ref=e191]
+            - generic [ref=e194]:
+              - heading "Services" [level=3] [ref=e195]
+              - list [ref=e196]:
+                - listitem [ref=e197]:
+                  - link "AI Solutions" [ref=e198] [cursor=pointer]:
+                    - /url: /services
+                - listitem [ref=e199]:
+                  - link "Web Development" [ref=e200] [cursor=pointer]:
+                    - /url: /services
+                - listitem [ref=e201]:
+                  - link "Mobile Apps" [ref=e202] [cursor=pointer]:
+                    - /url: /services
+                - listitem [ref=e203]:
+                  - link "Cloud Services" [ref=e204] [cursor=pointer]:
+                    - /url: /services
+                - listitem [ref=e205]:
+                  - link "Blockchain" [ref=e206] [cursor=pointer]:
+                    - /url: /services
+                - listitem [ref=e207]:
+                  - link "Digital Transformation" [ref=e208] [cursor=pointer]:
+                    - /url: /services
+            - generic [ref=e209]:
+              - heading "Company" [level=3] [ref=e210]
+              - list [ref=e211]:
+                - listitem [ref=e212]:
+                  - link "About Us" [ref=e213] [cursor=pointer]:
+                    - /url: /about
+                - listitem [ref=e214]:
+                  - link "Careers" [ref=e215] [cursor=pointer]:
+                    - /url: /careers
+                - listitem [ref=e216]:
+                  - link "Case Studies" [ref=e217] [cursor=pointer]:
+                    - /url: /case-studies
+                - listitem [ref=e218]:
+                  - link "Blog" [ref=e219] [cursor=pointer]:
+                    - /url: /blog
+            - generic [ref=e220]:
+              - heading "Contact" [level=3] [ref=e221]
+              - list [ref=e222]:
+                - listitem [ref=e223]:
+                  - img [ref=e224]
+                  - link "info@qmindx.com" [ref=e227] [cursor=pointer]:
+                    - /url: mailto:info@qmindx.com
+                - listitem [ref=e228]:
+                  - img [ref=e229]
+                  - link "+1 (234) 567-890" [ref=e231] [cursor=pointer]:
+                    - /url: tel:+1234567890
+                - listitem [ref=e232]:
+                  - img [ref=e233]
+                  - generic [ref=e236]: 123 Tech Street, Innovation City, IN 12345
+          - generic [ref=e238]:
+            - paragraph [ref=e239]: © 2025 QmindX. All rights reserved.
+            - generic [ref=e240]:
+              - link "Privacy Policy" [ref=e241] [cursor=pointer]:
+                - /url: /privacy
+              - link "Terms of Service" [ref=e242] [cursor=pointer]:
+                - /url: /terms
+  - link "Skip to content" [ref=e243] [cursor=pointer]:
+    - /url: "#main-content"
+```

@@ -1,0 +1,122 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - region "Notifications (F8)":
+      - list
+    - region "Notifications alt+T"
+    - generic [ref=e4]:
+      - banner [ref=e5]:
+        - navigation [ref=e6]:
+          - generic [ref=e7]:
+            - link "Q QmindX" [ref=e8] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e10]: Q
+              - generic [ref=e11]: QmindX
+            - navigation "Main navigation" [ref=e12]:
+              - link "Home" [ref=e13] [cursor=pointer]:
+                - /url: /
+              - link "Services" [ref=e14] [cursor=pointer]:
+                - /url: /services
+              - link "Industries" [ref=e15] [cursor=pointer]:
+                - /url: /industries
+              - link "Case Studies" [ref=e16] [cursor=pointer]:
+                - /url: /case-studies
+              - link "About" [ref=e17] [cursor=pointer]:
+                - /url: /about
+              - link "Careers" [ref=e18] [cursor=pointer]:
+                - /url: /careers
+              - link "Contact" [ref=e19] [cursor=pointer]:
+                - /url: /contact
+            - link "Get Started" [ref=e21] [cursor=pointer]:
+              - /url: /contact
+      - main [ref=e22]:
+        - generic [ref=e24]:
+          - heading "Claude Proxy Demo" [level=1] [ref=e25]
+          - heading "Claude Proxy Demo" [level=2] [ref=e26]
+          - paragraph [ref=e27]:
+            - text: This demo calls the Netlify serverless proxy at
+            - code [ref=e28]: /.netlify/functions/claude-proxy
+            - text: . Make sure you set up CLAUDE_API_URL and CLAUDE_API_KEY in your Netlify environment before using.
+          - generic [ref=e29]: Prompt
+          - textbox "Claude prompt" [ref=e30]: Write a short product description for QmindX
+          - button "Call Claude" [ref=e32] [cursor=pointer]
+      - contentinfo [ref=e33]:
+        - generic [ref=e34]:
+          - generic [ref=e35]:
+            - generic [ref=e36]:
+              - generic [ref=e37]:
+                - generic [ref=e39]: Q
+                - generic [ref=e40]: QmindX
+              - paragraph [ref=e41]: Leading technology company delivering cutting-edge AI and digital solutions for modern businesses.
+              - generic [ref=e42]:
+                - link "LinkedIn" [ref=e43] [cursor=pointer]:
+                  - /url: https://www.linkedin.com
+                  - img [ref=e44]
+                - link "Twitter" [ref=e48] [cursor=pointer]:
+                  - /url: https://twitter.com
+                  - img [ref=e49]
+                - link "GitHub" [ref=e51] [cursor=pointer]:
+                  - /url: https://github.com
+                  - img [ref=e52]
+            - generic [ref=e55]:
+              - heading "Services" [level=3] [ref=e56]
+              - list [ref=e57]:
+                - listitem [ref=e58]:
+                  - link "AI Solutions" [ref=e59] [cursor=pointer]:
+                    - /url: /services
+                - listitem [ref=e60]:
+                  - link "Web Development" [ref=e61] [cursor=pointer]:
+                    - /url: /services
+                - listitem [ref=e62]:
+                  - link "Mobile Apps" [ref=e63] [cursor=pointer]:
+                    - /url: /services
+                - listitem [ref=e64]:
+                  - link "Cloud Services" [ref=e65] [cursor=pointer]:
+                    - /url: /services
+                - listitem [ref=e66]:
+                  - link "Blockchain" [ref=e67] [cursor=pointer]:
+                    - /url: /services
+                - listitem [ref=e68]:
+                  - link "Digital Transformation" [ref=e69] [cursor=pointer]:
+                    - /url: /services
+            - generic [ref=e70]:
+              - heading "Company" [level=3] [ref=e71]
+              - list [ref=e72]:
+                - listitem [ref=e73]:
+                  - link "About Us" [ref=e74] [cursor=pointer]:
+                    - /url: /about
+                - listitem [ref=e75]:
+                  - link "Careers" [ref=e76] [cursor=pointer]:
+                    - /url: /careers
+                - listitem [ref=e77]:
+                  - link "Case Studies" [ref=e78] [cursor=pointer]:
+                    - /url: /case-studies
+                - listitem [ref=e79]:
+                  - link "Blog" [ref=e80] [cursor=pointer]:
+                    - /url: /blog
+            - generic [ref=e81]:
+              - heading "Contact" [level=3] [ref=e82]
+              - list [ref=e83]:
+                - listitem [ref=e84]:
+                  - img [ref=e85]
+                  - link "info@qmindx.com" [ref=e88] [cursor=pointer]:
+                    - /url: mailto:info@qmindx.com
+                - listitem [ref=e89]:
+                  - img [ref=e90]
+                  - link "+1 (234) 567-890" [ref=e92] [cursor=pointer]:
+                    - /url: tel:+1234567890
+                - listitem [ref=e93]:
+                  - img [ref=e94]
+                  - generic [ref=e97]: 123 Tech Street, Innovation City, IN 12345
+          - generic [ref=e99]:
+            - paragraph [ref=e100]: © 2025 QmindX. All rights reserved.
+            - generic [ref=e101]:
+              - link "Privacy Policy" [ref=e102] [cursor=pointer]:
+                - /url: /privacy
+              - link "Terms of Service" [ref=e103] [cursor=pointer]:
+                - /url: /terms
+  - link "Skip to content" [ref=e104] [cursor=pointer]:
+    - /url: "#main-content"
+```
