@@ -7,6 +7,18 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  
+  // Close mobile menu when escape key is pressed
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isMobileMenuOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +54,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+          <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8" aria-label="Main navigation">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -50,11 +62,12 @@ const Header = () => {
                 className={`text-sm font-medium transition-colors hover:text-accent ${
                   location.pathname === item.path ? "text-accent" : "text-foreground"
                 }`}
+                aria-current={location.pathname === item.path ? "page" : undefined}
               >
                 {item.name}
               </Link>
             ))}
-          </div>
+          </nav>
 
           {/* CTA Button */}
           <div className="hidden lg:block">
@@ -68,6 +81,8 @@ const Header = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="lg:hidden p-2 text-foreground hover:text-accent transition-colors"
             aria-label="Toggle menu"
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -75,7 +90,11 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 animate-fade-in bg-background/95 backdrop-blur-md -mx-4 px-4 border-t border-border/10">
+          <nav 
+            id="mobile-menu"
+            className="lg:hidden mt-4 pb-4 animate-fade-in bg-background/95 backdrop-blur-md -mx-4 px-4 border-t border-border/10"
+            aria-label="Mobile navigation"
+          >
             <div className="flex flex-col space-y-2 pt-2">
               {navItems.map((item) => (
                 <Link
@@ -85,6 +104,7 @@ const Header = () => {
                   className={`text-base font-medium transition-colors hover:text-accent px-4 py-2.5 ${
                     location.pathname === item.path ? "text-accent bg-accent/10 rounded-lg" : "text-foreground"
                   }`}
+                  aria-current={location.pathname === item.path ? "page" : undefined}
                 >
                   {item.name}
                 </Link>
@@ -95,7 +115,7 @@ const Header = () => {
                 </Link>
               </Button>
             </div>
-          </div>
+          </nav>
         )}
       </nav>
     </header>
