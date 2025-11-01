@@ -34,13 +34,13 @@ const Footer = () => {
               Leading technology company delivering cutting-edge AI and digital solutions for modern businesses.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-accent transition-colors" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors" aria-label="LinkedIn">
                 <Linkedin size={20} />
               </a>
-              <a href="#" className="hover:text-accent transition-colors" aria-label="Twitter">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors" aria-label="Twitter">
                 <Twitter size={20} />
               </a>
-              <a href="#" className="hover:text-accent transition-colors" aria-label="GitHub">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors" aria-label="GitHub">
                 <Github size={20} />
               </a>
             </div>
