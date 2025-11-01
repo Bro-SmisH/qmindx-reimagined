@@ -41,7 +41,7 @@ const ClaudeDemo = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <main style={{ paddingTop: 'var(--header-offset)' }}>
+  <main id="main-content" style={{ paddingTop: 'var(--header-offset)' }}>
         <section className="py-20 container mx-auto px-4">
           <div className="max-w-3xl mx-auto bg-background rounded-2xl p-8">
             <h2 className="text-2xl font-bold mb-4">Claude Proxy Demo</h2>

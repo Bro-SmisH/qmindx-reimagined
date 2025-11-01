@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
   const location = useLocation();
   
   // Close mobile menu when escape key is pressed
@@ -44,6 +45,30 @@ const Header = () => {
     return () => window.removeEventListener("resize", setHeaderOffset);
   }, []);
 
+  // Hide header on scroll down, show on scroll up (but keep visible when mobile menu open)
+  useEffect(() => {
+    let lastY = window.scrollY;
+    const threshold = 10;
+
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (Math.abs(y - lastY) < threshold) return;
+
+      if (y > lastY && y > 80 && !isMobileMenuOpen) {
+        // scrolling down
+        setIsHidden(true);
+      } else {
+        // scrolling up
+        setIsHidden(false);
+      }
+
+      lastY = y;
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [isMobileMenuOpen]);
+
   const navItems = [
     { name: "Home", path: "/" },
     { name: "Services", path: "/services" },
@@ -55,7 +80,7 @@ const Header = () => {
   ];
 
   return (
-    <header ref={headerRef} className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md ${
+    <header ref={headerRef} className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md transform ${isHidden ? '-translate-y-full' : 'translate-y-0'} ${
       isScrolled ? "shadow-elegant" : ""
     }`}>
       <nav className="container mx-auto px-4 py-3 md:py-4">

@@ -6,7 +6,7 @@ const Apply = () => {
   return (
     <div className="min-h-screen">
       <Header />
-  <main style={{ paddingTop: 'var(--header-offset)' }}>
+  <main id="main-content" style={{ paddingTop: 'var(--header-offset)' }}>
         <CareerFormSection />
       </main>
       <Footer />
