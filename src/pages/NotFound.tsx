@@ -5,7 +5,8 @@ const NotFound = () => {
   const location = useLocation();
 
   useEffect(() => {
-    console.error("404 Error: User attempted to access non-existent route:", location.pathname);
+    // Use a warning instead of an error for expected 404 route navigation
+    console.warn("404 Warning: Attempted to access non-existent route:", location.pathname);
   }, [location.pathname]);
 
   return (
