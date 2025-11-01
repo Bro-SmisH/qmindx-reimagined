@@ -151,7 +151,7 @@ const About = () => {
                 <Button asChild size="lg" className="rounded-full px-8">
                   <Link to="/contact">Get in Touch</Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="rounded-full px-8 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+                <Button asChild size="lg" variant="outline" className="rounded-full px-8 border-primary-foreground/30 text-primary-foreground bg-transparent hover:bg-primary-foreground/10">
                   <Link to="/services">Explore Our Services</Link>
                 </Button>
               </div>
