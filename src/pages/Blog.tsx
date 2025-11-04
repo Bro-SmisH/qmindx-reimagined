@@ -13,7 +13,8 @@ const Blog = () => {
       category: "Artificial Intelligence",
       date: "October 28, 2025",
       readTime: "5 min read",
-      image: "https://d3puhl2t51lebl.cloudfront.net/uploads/2025/05/ai-enterprise.jpg"
+      image: "https://d3puhl2t51lebl.cloudfront.net/uploads/2025/05/ai-enterprise.jpg",
+      link: "/blog/ai-enterprise"
     },
     {
       title: "Building Scalable Cloud Infrastructure: Best Practices",
@@ -22,6 +23,8 @@ const Blog = () => {
       date: "October 25, 2025",
       readTime: "7 min read",
       image: "https://d3puhl2t51lebl.cloudfront.net/uploads/2025/05/cloud-infra.jpg"
+      ,
+      link: "/blog/cloud-infrastructure"
     },
     {
       title: "Web3 Development: A Comprehensive Guide",
@@ -30,6 +33,8 @@ const Blog = () => {
       date: "October 22, 2025",
       readTime: "10 min read",
       image: "https://d3puhl2t51lebl.cloudfront.net/uploads/2025/05/web3-dev.jpg"
+      ,
+      link: "/blog/web3-development"
     },
     {
       title: "Mobile App Development Trends in 2025",
@@ -38,6 +43,8 @@ const Blog = () => {
       date: "October 19, 2025",
       readTime: "6 min read",
       image: "https://d3puhl2t51lebl.cloudfront.net/uploads/2025/05/mobile-trends.jpg"
+      ,
+      link: "/blog/mobile-trends"
     },
   ];
 
@@ -94,7 +101,7 @@ const Blog = () => {
                         {post.excerpt}
                       </p>
                       <Button asChild variant="outline" className="group-hover:border-accent group-hover:text-accent transition-colors">
-                        <Link to={`/blog/${post.title.toLowerCase().replace(/\s+/g, '-')}`}>
+                        <Link to={post.link || "#"}>
                           Read More
                         </Link>
                       </Button>

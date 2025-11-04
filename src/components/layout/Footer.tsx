@@ -3,12 +3,12 @@ import { Mail, Phone, MapPin, Linkedin, Twitter, Github } from "lucide-react";
 
 const Footer = () => {
   const services = [
-    "AI Solutions",
-    "Web Development",
-    "Mobile Apps",
-    "Cloud Services",
-    "Blockchain",
-    "Digital Transformation",
+    { name: "AI Solutions", path: "/services/ai-solutions" },
+    { name: "Web Development", path: "/services/web-development" },
+    { name: "Mobile Development", path: "/services/mobile-development" },
+    { name: "Cloud Services", path: "/services/cloud-services" },
+    { name: "Data Analytics", path: "/services/data-analytics" },
+    { name: "Blockchain & Web3", path: "/services/blockchain-web3" },
   ];
 
   const company = [
@@ -51,12 +51,12 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
               {services.map((service) => (
-                <li key={service}>
+                <li key={service.path}>
                   <Link
-                    to="/services"
+                    to={service.path}
                     className="text-primary-foreground/80 hover:text-accent transition-colors"
                   >
-                    {service}
+                    {service.name}
                   </Link>
                 </li>
               ))}
