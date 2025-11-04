@@ -13,6 +13,7 @@ const Services = () => {
       description: "Custom AI models, NLP, computer vision, predictive analytics, and intelligent automation solutions.",
       features: ["Custom AI Models", "NLP & Chatbots", "Computer Vision", "Predictive Analytics"],
       gradient: "from-accent/20 to-accent/5",
+      link: "/services/ai-solutions",
     },
     {
       icon: Smartphone,
@@ -20,6 +21,7 @@ const Services = () => {
       description: "Native and cross-platform mobile applications for iOS and Android with seamless user experiences.",
       features: ["iOS Development", "Android Development", "React Native", "Flutter"],
       gradient: "from-cyan-accent/20 to-cyan-accent/5",
+      link: "/services/mobile-development",
     },
     {
       icon: Globe,
@@ -27,6 +29,7 @@ const Services = () => {
       description: "Scalable, responsive web applications and platforms built with cutting-edge technologies.",
       features: ["React & Next.js", "Progressive Web Apps", "E-commerce", "Enterprise Portals"],
       gradient: "from-accent/20 to-accent/5",
+      link: "/services/web-development",
     },
     {
       icon: Cloud,
@@ -34,6 +37,7 @@ const Services = () => {
       description: "Cloud migration, optimization, DevOps, and infrastructure management for AWS, Azure, and GCP.",
       features: ["Cloud Migration", "DevOps & CI/CD", "Infrastructure as Code", "Serverless Architecture"],
       gradient: "from-cyan-accent/20 to-cyan-accent/5",
+      link: "/services/cloud-services",
     },
     {
       icon: Database,
@@ -41,6 +45,7 @@ const Services = () => {
       description: "Transform raw data into actionable insights with advanced analytics, visualization, and BI solutions.",
       features: ["Data Warehousing", "Business Intelligence", "Data Visualization", "Big Data Processing"],
       gradient: "from-accent/20 to-accent/5",
+      link: "/services/data-analytics",
     },
     {
       icon: Lock,
@@ -48,6 +53,7 @@ const Services = () => {
       description: "Secure blockchain solutions, smart contracts, DeFi platforms, and decentralized applications.",
       features: ["Smart Contracts", "DeFi Solutions", "NFT Platforms", "Crypto Wallets"],
       gradient: "from-cyan-accent/20 to-cyan-accent/5",
+      link: "/services/blockchain-web3",
     },
     {
       icon: Code,
@@ -91,33 +97,34 @@ const Services = () => {
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, index) => (
-                <Card
-                  key={index}
-                  className="group border-2 hover:border-accent transition-all duration-300 hover:shadow-hover animate-fade-in-up"
-                  style={{ animationDelay: `${index * 0.05}s` }}
-                >
-                  <CardHeader>
-                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                      <service.icon className="w-7 h-7 text-accent" />
-                    </div>
-                    <CardTitle className="text-xl font-bold group-hover:text-accent transition-colors">
-                      {service.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground mb-4">
-                      {service.description}
-                    </p>
-                    <ul className="space-y-2">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-sm text-foreground">
-                          <div className="w-1.5 h-1.5 bg-accent rounded-full mr-2"></div>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
+                <Link to={service.link} key={index} className="block">
+                  <Card
+                    className="group border-2 hover:border-accent transition-all duration-300 hover:shadow-hover animate-fade-in-up cursor-pointer"
+                    style={{ animationDelay: `${index * 0.05}s` }}
+                  >
+                    <CardHeader>
+                      <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                        <service.icon className="w-7 h-7 text-accent" />
+                      </div>
+                      <CardTitle className="text-xl font-bold group-hover:text-accent transition-colors">
+                        {service.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground mb-4">
+                        {service.description}
+                      </p>
+                      <ul className="space-y-2">
+                        {service.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-center text-sm text-foreground">
+                            <div className="w-1.5 h-1.5 bg-accent rounded-full mr-2"></div>
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </Link>
               ))}
             </div>
           </div>
