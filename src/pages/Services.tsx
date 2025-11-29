@@ -1,159 +1,168 @@
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Brain, Smartphone, Cloud, Globe, Database, Lock, Code, Zap } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { ArrowRight, Code, Database, Globe, Layout as LayoutIcon, Server, Smartphone, Zap } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import PageTransition from "@/components/animation/PageTransition";
+import { Layout, HeroLayout } from "@/components/layout/Layout";
+import { fetchServices } from "@/lib/mockData";
 
 const Services = () => {
-  const services = [
+  const [services, setServices] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  const staticServices = [
     {
-      icon: Brain,
-      title: "AI & Machine Learning",
-      description: "Custom AI models, NLP, computer vision, predictive analytics, and intelligent automation solutions.",
-      features: ["Custom AI Models", "NLP & Chatbots", "Computer Vision", "Predictive Analytics"],
-      gradient: "from-accent/20 to-accent/5",
-      link: "/services/ai-solutions",
-    },
-    {
-      icon: Smartphone,
-      title: "Mobile App Development",
-      description: "Native and cross-platform mobile applications for iOS and Android with seamless user experiences.",
-      features: ["iOS Development", "Android Development", "React Native", "Flutter"],
-      gradient: "from-cyan-accent/20 to-cyan-accent/5",
-      link: "/services/mobile-development",
-    },
-    {
-      icon: Globe,
-      title: "Web Development",
-      description: "Scalable, responsive web applications and platforms built with cutting-edge technologies.",
-      features: ["React & Next.js", "Progressive Web Apps", "E-commerce", "Enterprise Portals"],
-      gradient: "from-accent/20 to-accent/5",
-      link: "/services/web-development",
-    },
-    {
-      icon: Cloud,
-      title: "Cloud Solutions",
-      description: "Cloud migration, optimization, DevOps, and infrastructure management for AWS, Azure, and GCP.",
-      features: ["Cloud Migration", "DevOps & CI/CD", "Infrastructure as Code", "Serverless Architecture"],
-      gradient: "from-cyan-accent/20 to-cyan-accent/5",
-      link: "/services/cloud-services",
-    },
-    {
-      icon: Database,
-      title: "Data Analytics & BI",
-      description: "Transform raw data into actionable insights with advanced analytics, visualization, and BI solutions.",
-      features: ["Data Warehousing", "Business Intelligence", "Data Visualization", "Big Data Processing"],
-      gradient: "from-accent/20 to-accent/5",
-      link: "/services/data-analytics",
-    },
-    {
-      icon: Lock,
-      title: "Blockchain & Web3",
-      description: "Secure blockchain solutions, smart contracts, DeFi platforms, and decentralized applications.",
-      features: ["Smart Contracts", "DeFi Solutions", "NFT Platforms", "Crypto Wallets"],
-      gradient: "from-cyan-accent/20 to-cyan-accent/5",
-      link: "/services/blockchain-web3",
-    },
-    {
-      icon: Code,
+      id: 1,
       title: "Custom Software Development",
-      description: "Tailored software solutions designed to solve unique business challenges and drive growth.",
-      features: ["Enterprise Software", "SaaS Products", "API Development", "Legacy Modernization"],
-      gradient: "from-accent/20 to-accent/5",
+      description: "Tailored solutions for your unique business challenges.",
+      icon: <Code size={32} />,
+      slug: "custom-software-development",
+      color: "from-blue-500 to-cyan-400"
     },
     {
-      icon: Zap,
-      title: "Digital Transformation",
-      description: "End-to-end digital transformation services to modernize processes and accelerate innovation.",
-      features: ["Process Automation", "System Integration", "Digital Strategy", "Change Management"],
-      gradient: "from-cyan-accent/20 to-cyan-accent/5",
+      id: 2,
+      title: "Web Application Development",
+      description: "Scalable and responsive web apps built with modern tech.",
+      icon: <Globe size={32} />,
+      slug: "web-application-development",
+      color: "from-purple-500 to-pink-400"
+    },
+    {
+      id: 3,
+      title: "Mobile App Development",
+      description: "Native and cross-platform mobile experiences.",
+      icon: <Smartphone size={32} />,
+      slug: "mobile-app-development",
+      color: "from-orange-500 to-amber-400"
+    },
+    {
+      id: 4,
+      title: "Cloud Solutions",
+      description: "Secure and scalable cloud infrastructure and migration.",
+      icon: <Server size={32} />,
+      slug: "cloud-solutions",
+      color: "from-emerald-500 to-teal-400"
+    },
+    {
+      id: 5,
+      title: "UI/UX Design",
+      description: "User-centric design that drives engagement and conversion.",
+      icon: <LayoutIcon size={32} />,
+      slug: "ui-ux-design",
+      color: "from-indigo-500 to-violet-400"
+    },
+    {
+      id: 6,
+      title: "Data Analytics",
+      description: "Turn data into actionable insights for better decision making.",
+      icon: <Database size={32} />,
+      slug: "data-analytics",
+      color: "from-rose-500 to-red-400"
     },
   ];
 
+  const slugify = (value: string): string =>
+    value
+      .toLowerCase()
+      .trim()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)+/g, "");
+
+  useEffect(() => {
+    const load = async () => {
+      try {
+        const data = await fetchServices();
+        if (data && data.length > 0) {
+          const mapped = data.map((item: any, index: number) => ({
+            ...item,
+            icon: staticServices[index % staticServices.length]?.icon || <Zap size={32} />,
+            color: staticServices[index % staticServices.length]?.color || "from-blue-600 to-indigo-600",
+            link: item.link || `/services/${slugify(item.slug || item.title || "")}`,
+          }));
+          setServices(mapped);
+        } else {
+          setServices(staticServices.map(s => ({ ...s, link: `/services/${s.slug}` })));
+        }
+      } catch (e) {
+        console.error(e);
+        setServices(staticServices.map(s => ({ ...s, link: `/services/${s.slug}` })));
+      } finally {
+        setLoading(false);
+      }
+    };
+    load();
+  }, []);
+
   return (
-    <div className="min-h-screen">
-      <Header />
-  <main id="main-content" role="main" style={{ paddingTop: 'var(--header-offset)' }}>
+    <PageTransition>
+      <Layout>
         {/* Hero Section */}
-        <section className="pt-32 pb-20 bg-gradient-hero">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <span className="text-accent-foreground font-semibold text-sm uppercase tracking-wider">
-                Our Services
-              </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mt-4 mb-6 animate-fade-in-up">
-                Comprehensive Digital Solutions for Modern Businesses
-              </h1>
-              <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto animate-fade-in">
-                From AI and blockchain to cloud and mobile, we deliver cutting-edge technology solutions tailored to your unique needs.
-              </p>
-            </div>
-          </div>
-        </section>
+        <HeroLayout background="gradient" className="text-center">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            Transforming Ideas into <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Digital Reality</span>
+          </h1>
+          <p className="text-xl text-slate-300 max-w-2xl mx-auto mb-10">
+            We deliver cutting-edge technology solutions that drive innovation and business growth.
+          </p>
+        </HeroLayout>
 
         {/* Services Grid */}
-        <section className="py-20 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {services.map((service, index) => (
-                <Link to={service.link} key={index} className="block">
-                  <Card
-                    className="group border-2 hover:border-accent transition-all duration-300 hover:shadow-hover animate-fade-in-up cursor-pointer"
-                    style={{ animationDelay: `${index * 0.05}s` }}
+        <section className="py-20 -mt-20 relative z-20">
+          <div className="container mx-auto px-6">
+            {loading ? (
+              <div className="flex justify-center py-20">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600"></div>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {services.map((service, index) => (
+                  <Link
+                    to={service.link}
+                    key={service.id || index}
+                    className="group relative bg-card rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-border"
                   >
-                    <CardHeader>
-                      <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                        <service.icon className="w-7 h-7 text-accent" />
-                      </div>
-                      <CardTitle className="text-xl font-bold group-hover:text-accent transition-colors">
-                        {service.title}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground mb-4">
-                        {service.description}
-                      </p>
-                      <ul className="space-y-2">
-                        {service.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-center text-sm text-foreground">
-                            <div className="w-1.5 h-1.5 bg-accent rounded-full mr-2"></div>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </Link>
-              ))}
-            </div>
+                    <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${service.color} opacity-10 rounded-bl-full -mr-10 -mt-10 transition-transform group-hover:scale-150 duration-500`} />
+
+                    <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center text-white mb-6 shadow-md group-hover:scale-110 transition-transform duration-300`}>
+                      {service.icon}
+                    </div>
+
+                    <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                      {service.title}
+                    </h3>
+
+                    <p className="text-muted-foreground mb-6 line-clamp-3">
+                      {service.description}
+                    </p>
+
+                    <div className="flex items-center text-primary font-medium group-hover:translate-x-2 transition-transform">
+                      Learn more <ArrowRight size={16} className="ml-2" />
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            )}
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-card">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Ready to Transform Your Business?
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Let's discuss how our services can help you achieve your goals and drive innovation.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" className="rounded-full px-8">
-                  <Link to="/contact">Get Started</Link>
-                </Button>
-                <Button asChild size="lg" variant="outline" className="rounded-full px-8">
-                  <Link to="/case-studies">View Case Studies</Link>
-                </Button>
-              </div>
-            </div>
+        <section className="py-20 bg-background">
+          <div className="container mx-auto px-6 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              Ready to Start Your Project?
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
+              Let's discuss how we can help you achieve your business goals with our custom technology solutions.
+            </p>
+            <Link to="/contact">
+              <Button size="lg" className="rounded-full px-8 py-6 text-lg">
+                Get in Touch
+              </Button>
+            </Link>
           </div>
         </section>
-      </main>
-      <Footer />
-    </div>
+      </Layout>
+    </PageTransition>
   );
 };
 

@@ -1,5 +1,4 @@
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
+import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
@@ -82,9 +81,8 @@ const CaseStudies = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      <Header />
-  <main id="main-content" role="main" style={{ paddingTop: 'var(--header-offset)' }}>
+    <Layout>
+      <main id="main-content" role="main" style={{ paddingTop: 'var(--header-offset)' }}>
         {/* Hero Section */}
         <section className="pt-32 pb-20 bg-gradient-hero">
           <div className="container mx-auto px-4">
@@ -200,8 +198,7 @@ const CaseStudies = () => {
           </div>
         </section>
       </main>
-      <Footer />
-    </div>
+    </Layout>
   );
 };
 

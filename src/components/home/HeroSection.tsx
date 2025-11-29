@@ -1,139 +1,136 @@
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
-import { FadeIn, FadeInUp, ScaleIn } from "@/components/animation/Animations";
+import { ArrowRight, Play } from "lucide-react";
+import { useState } from "react";
+import { H1, Lead } from "@/components/typography/Typography";
+import { GradientText } from "@/components/typography/Typography";
+import { HeroLayout } from "@/components/layout/Layout";
 
 const HeroSection = () => {
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+
+  const stats = [
+    { number: "300+", label: "Expert Developers" },
+    { number: "500+", label: "Happy Customers" },
+    { number: "1140+", label: "Projects Delivered" },
+    { number: "96%", label: "Client Retention" }
+  ];
+
   return (
-    <section className="relative min-h-screen flex items-center bg-gradient-hero overflow-hidden">
-      {/* Animated Background Pattern */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-accent/30 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-accent/20 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: "1s" }}></div>
-        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-accent/20 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: "2s" }}></div>
-      </div>
+    <HeroLayout variant="gradient" className="min-h-screen">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+          {/* Left Content */}
+          <motion.div 
+            className="space-y-8"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <motion.div 
+              className="space-y-6"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            >
+              <H1 className="!text-4xl sm:!text-5xl lg:!text-6xl xl:!text-7xl">
+                Shaping the Future with{" "}
+                <GradientText>
+                  Scalable, Intelligent, AI-Powered
+                </GradientText>{" "}
+                Solutions
+              </H1>
+              
+              <Lead className="!text-lg sm:!text-xl max-w-2xl">
+                At QMindX, we help businesses accelerate growth through AI-powered solutions, digital transformation services, and ready-to-deploy white-label platforms. Whether you're modernizing legacy systems, launching scalable SaaS products, or integrating intelligent automation — we have the expertise to deliver.
+              </Lead>
+            </motion.div>
 
-      {/* Tech Grid Pattern */}
-      <motion.div
-        className="absolute inset-0 bg-[linear-gradient(rgba(78,124,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(78,124,255,0.03)_1px,transparent_1px)] bg-[size:100px_100px]"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.2 }}
-      ></motion.div>
-
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Main Heading */}
-          <FadeInUp>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-6">
-              AI First Digital Innovation
-              <br />
-              <span className="text-accent">for Modern Businesses</span>
-            </h1>
-          </FadeInUp>
-
-          {/* Subheading */}
-          <FadeIn delay={0.2}>
-            <p className="text-xl md:text-2xl text-primary-foreground/90 mb-4">
-              AI. Mobile. Web. Cloud. Analytics.
-            </p>
-          </FadeIn>
-          <FadeIn delay={0.3}>
-            <p className="text-lg md:text-xl text-primary-foreground/80 mb-8">
-              Web3. Blockchain. Crypto.
-            </p>
-          </FadeIn>
-          <FadeIn delay={0.4}>
-            <p className="text-lg text-primary-foreground/70 mb-12 max-w-2xl mx-auto">
-              Bespoke solutions to drive growth.
-            </p>
-          </FadeIn>
-
-          {/* CTA Buttons */}
-          <ScaleIn delay={0.5}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button asChild size="lg" variant="default" className="rounded-full px-8 group">
+            {/* CTA Buttons */}
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            >
+              <Button 
+                asChild
+                size="lg" 
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              >
                 <Link to="/contact">
-                  Consult With Us
-                  <motion.div
-                    className="inline-block ml-2"
-                    whileHover={{ x: 4 }}
-                    transition={{ type: "spring", stiffness: 200, damping: 10 }}
-                  >
-                    <ArrowRight className="h-4 w-4" />
-                  </motion.div>
+                  Get Started
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="rounded-full px-8 border-primary-foreground/30 text-primary-foreground bg-transparent hover:bg-primary-foreground/10">
-                <Link to="/services">
-                  Explore Services
-                </Link>
+              
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="border-2 border-border text-muted-foreground px-8 py-3 rounded-full font-semibold hover:bg-muted/10 transition-all duration-300"
+                onClick={() => setIsVideoPlaying(true)}
+              >
+                <Play className="mr-2 h-5 w-5" />
+                Watch Demo
               </Button>
-            </div>
-          </ScaleIn>
+            </motion.div>
 
-          {/* Partner Badges */}
-          <FadeIn delay={0.6}>
-            <div className="mt-16 flex flex-wrap justify-center gap-8 items-center">
-              <motion.div
-                className="flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 rounded-full backdrop-blur-sm"
-                whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.15)" }}
-                transition={{ type: "spring", stiffness: 400, damping: 20 }}
-              >
-                <div className="w-2 h-2 bg-accent rounded-full"></div>
-                <span className="text-primary-foreground/90 text-sm font-medium">AWS Consulting Partner</span>
-              </motion.div>
-              <motion.div
-                className="flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 rounded-full backdrop-blur-sm"
-                whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.15)" }}
-                transition={{ type: "spring", stiffness: 400, damping: 20 }}
-              >
-                <div className="w-2 h-2 bg-cyan-accent rounded-full"></div>
-                <span className="text-primary-foreground/90 text-sm font-medium">AI Innovation Leader</span>
-              </motion.div>
-              <motion.div
-                className="flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 rounded-full backdrop-blur-sm"
-                whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.15)" }}
-                transition={{ type: "spring", stiffness: 400, damping: 20 }}
-              >
-                <div className="w-2 h-2 bg-accent rounded-full"></div>
-                <span className="text-primary-foreground/90 text-sm font-medium">Cloud Solutions Expert</span>
-              </motion.div>
+            {/* Stats */}
+            <motion.div 
+              className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-8"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+            >
+              {stats.map((stat, index) => (
+                <motion.div 
+                  key={index}
+                  className="text-center group"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: 0.8 + (index * 0.1), ease: "easeOut" }}
+                >
+                  <div className="text-2xl sm:text-3xl font-bold text-blue-600 dark:text-blue-400 group-hover:text-purple-600 transition-colors duration-300">
+                    {stat.number}
+                  </div>
+                  <div className="text-sm text-muted-foreground mt-1 group-hover:text-muted-foreground/80 transition-colors duration-300">
+                    {stat.label}
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
+
+          {/* Right Content - Image/Video */}
+          <motion.div 
+            className="relative"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          >
+            <div className="relative w-full h-[400px] lg:h-[500px] rounded-2xl overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center space-y-4">
+                  <div className="w-24 h-24 mx-auto bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                      <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full"></div>
+                    </div>
+                  </div>
+                  <div className="text-2xl font-bold text-foreground">AI Innovation</div>
+                  <div className="text-muted-foreground">Digital Transformation</div>
+                </div>
+              </div>
+              
+              {/* Floating Elements */}
+              <div className="absolute top-10 left-10 w-20 h-20 bg-blue-400/20 rounded-full blur-xl animate-pulse"></div>
+              <div className="absolute bottom-10 right-10 w-16 h-16 bg-purple-400/20 rounded-full blur-xl animate-pulse delay-1000"></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-2xl animate-pulse delay-500"></div>
             </div>
-          </FadeIn>
+          </motion.div>
         </div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.6,
-          delay: 1,
-          y: {
-            duration: 0.8,
-            repeat: Infinity,
-            repeatType: "reverse",
-            ease: "easeInOut"
-          }
-        }}
-      >
-        <div className="w-6 h-10 border-2 border-primary-foreground/30 rounded-full flex justify-center pt-2">
-          <motion.div
-            className="w-1 h-3 bg-primary-foreground/50 rounded-full"
-            animate={{ opacity: [0.3, 1, 0.3] }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          ></motion.div>
-        </div>
-      </motion.div>
-    </section>
+    </HeroLayout>
   );
 };
 

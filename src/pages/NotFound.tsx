@@ -1,5 +1,9 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { Layout } from "@/components/layout/Layout";
+import { Button } from "@/components/ui/button";
+import { FadeInUp } from "@/components/animation/Animations";
+import { Home } from "lucide-react";
 
 const NotFound = () => {
   const location = useLocation();
@@ -10,15 +14,31 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">404</h1>
-        <p className="mb-4 text-xl text-gray-600">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 underline hover:text-blue-700">
-          Return to Home
-        </a>
+    <Layout>
+      <div className="min-h-screen bg-background flex items-center justify-center px-4">
+        <div className="max-w-md w-full text-center space-y-8">
+          <FadeInUp>
+            <div className="text-9xl font-bold text-primary">404</div>
+            <h1 className="text-3xl font-bold tracking-tight text-foreground">
+              Page Not Found
+            </h1>
+            <p className="text-muted-foreground">
+              Sorry, we couldn't find the page you're looking for.
+            </p>
+            <Button 
+              asChild 
+              className="mt-4"
+              variant="default"
+            >
+              <a href="/">
+                <Home className="mr-2 h-4 w-4" />
+                Back to Home
+              </a>
+            </Button>
+          </FadeInUp>
+        </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

@@ -15,6 +15,11 @@ import { useToast } from "@/hooks/use-toast";
 import { Send } from "lucide-react";
 import { contactFormSchema } from "@/lib/validations";
 import { useState } from "react";
+import Section from "@/components/layout/Section";
+import { HeroLayout } from "@/components/layout/Layout";
+import { H2, Body, GradientText } from "@/components/typography/Typography";
+import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 type FormData = {
   name: string;
@@ -62,28 +67,39 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-hero">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-12 animate-fade-in-up">
-            <span className="text-accent font-semibold text-sm uppercase tracking-wider">
-              Get in Touch
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-primary-foreground mt-4 mb-6">
-              Let's Build Something Amazing Together
-            </h2>
-            <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-              Ready to transform your business? Contact our team for a free consultation.
-            </p>
-          </div>
+    <HeroLayout background="gradient" variant="primary">
+      <div className="max-w-4xl mx-auto">
+        <motion.div 
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <motion.span 
+            className="text-accent font-semibold text-sm uppercase tracking-wider bg-accent/10 px-3 py-1 rounded-full inline-block mb-4"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            Get in Touch
+          </motion.span>
+          <H2 className="!text-4xl md:!text-5xl mb-6">
+            Let's Build Something <GradientText>Amazing Together</GradientText>
+          </H2>
+          <Body className="!text-lg !text-muted-foreground max-w-2xl mx-auto">
+            Ready to transform your business? Contact our team for a free consultation.
+          </Body>
+        </motion.div>
 
-          {/* Contact Form */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
           <Form {...form}>
             <form 
               onSubmit={form.handleSubmit(onSubmit)}
-              className="bg-background rounded-2xl shadow-hover p-8 md:p-12 space-y-6 animate-fade-in"
-              style={{ animationDelay: "0.2s" }}
+              className="bg-background/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 md:p-12 space-y-6 border border-border/50"
             >
               <div className="grid md:grid-cols-2 gap-6">
                 <FormField
@@ -97,7 +113,10 @@ const ContactSection = () => {
                       <FormControl>
                         <Input
                           placeholder="John Doe"
-                          className="w-full"
+                          className={cn(
+                            "w-full transition-all duration-200",
+                            "focus:ring-2 focus:ring-accent focus:border-transparent"
+                          )}
                           {...field}
                         />
                       </FormControl>
@@ -118,7 +137,10 @@ const ContactSection = () => {
                         <Input
                           type="email"
                           placeholder="john@example.com"
-                          className="w-full"
+                          className={cn(
+                            "w-full transition-all duration-200",
+                            "focus:ring-2 focus:ring-accent focus:border-transparent"
+                          )}
                           {...field}
                         />
                       </FormControl>
@@ -140,7 +162,10 @@ const ContactSection = () => {
                       <Input
                         type="tel"
                         placeholder="+1 (234) 567-890"
-                        className="w-full"
+                        className={cn(
+                          "w-full transition-all duration-200",
+                          "focus:ring-2 focus:ring-accent focus:border-transparent"
+                        )}
                         {...field}
                       />
                     </FormControl>
@@ -160,7 +185,10 @@ const ContactSection = () => {
                     <FormControl>
                       <Textarea
                         placeholder="Tell us about your project..."
-                        className="w-full min-h-[150px]"
+                        className={cn(
+                          "w-full min-h-[150px] transition-all duration-200",
+                          "focus:ring-2 focus:ring-accent focus:border-transparent"
+                        )}
                         {...field}
                       />
                     </FormControl>
@@ -169,26 +197,31 @@ const ContactSection = () => {
                 )}
               />
 
-              <Button
-                type="submit"
-                size="lg"
-                className="w-full md:w-auto rounded-full px-8"
-                disabled={isSubmitting}
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                {isSubmitting ? (
-                  "Sending..."
-                ) : (
-                  <>
-                    Send Message
-                    <Send className="ml-2 h-4 w-4" />
-                  </>
-                )}
-              </Button>
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full md:w-auto rounded-full px-8 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    "Sending..."
+                  ) : (
+                    <>
+                      Send Message
+                      <Send className="ml-2 h-4 w-4" />
+                    </>
+                  )}
+                </Button>
+              </motion.div>
             </form>
           </Form>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </HeroLayout>
   );
 };
 

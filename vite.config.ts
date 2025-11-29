@@ -6,7 +6,7 @@ import path from "path";
 export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
-    port: 8080,
+    // port: 8080, // Commented out to use default Vite port for Netlify dev compatibility
   },
   plugins: [react()],
   resolve: {
@@ -38,3 +38,4 @@ export default defineConfig(({ mode }) => ({
     },
   },
 }));
+

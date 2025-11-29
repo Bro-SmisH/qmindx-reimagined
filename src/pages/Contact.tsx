@@ -1,7 +1,6 @@
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 import ContactSection from "@/components/home/ContactSection";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Layout } from "@/components/layout/Layout";
 
 const Contact = () => {
   const contactInfo = [
@@ -32,9 +31,8 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      <Header />
-  <main id="main-content" role="main" style={{ paddingTop: 'var(--header-offset)' }}>
+    <Layout>
+      <main id="main-content" role="main">
         {/* Hero Section */}
         <section className="pt-32 pb-12 bg-gradient-hero">
           <div className="container mx-auto px-4">
@@ -101,8 +99,7 @@ const Contact = () => {
           </div>
         </section>
       </main>
-      <Footer />
-    </div>
+    </Layout>
   );
 };
 

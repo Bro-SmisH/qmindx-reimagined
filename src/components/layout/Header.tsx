@@ -1,9 +1,14 @@
 import { useState, useEffect, useRef, useLayoutEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
-const Header = () => {
+interface HeaderProps {
+  variant?: "default" | "transparent" | "solid";
+}
+
+const Header = ({ variant = "default" }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
@@ -80,39 +85,76 @@ const Header = () => {
     { name: "Contact", path: "/contact" },
   ];
 
+  const headerBackground = {
+    default: "bg-background/95 backdrop-blur-md",
+    transparent: "bg-transparent",
+    solid: "bg-background"
+  };
+
+  const headerShadow = isScrolled ? "shadow-elegant" : "";
+  const headerTransform = isHidden ? "-translate-y-full" : "translate-y-0";
+
   return (
-    <header ref={headerRef} className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md transform ${isHidden ? '-translate-y-full' : 'translate-y-0'} ${
-      isScrolled ? "shadow-elegant" : ""
-    }`}>
+    <header 
+      ref={headerRef} 
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        headerBackground[variant],
+        headerShadow,
+        headerTransform
+      )}
+    >
       <nav className="container mx-auto px-4 py-3 md:py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="w-8 h-8 md:w-10 md:h-10 bg-accent rounded-lg flex items-center justify-center transition-transform group-hover:scale-110">
-              <span className="text-primary-foreground font-bold text-lg md:text-xl">Q</span>
+          <Link to="/" className="flex items-center space-x-3 group">
+            <div className={cn(
+              "w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300",
+              "bg-gradient-to-br from-accent to-blue-bright group-hover:scale-110 group-hover:shadow-lg"
+            )}>
+              <span className="text-primary-foreground font-bold text-xl">Q</span>
             </div>
-            <span className="text-xl md:text-2xl font-bold text-foreground">QmindX</span>
+            <div className="flex flex-col">
+              <span className="text-xl md:text-2xl font-bold text-foreground group-hover:text-accent transition-colors">
+                QmindX
+              </span>
+              <span className="text-xs text-muted-foreground font-medium">
+                Digital Excellence
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8" aria-label="Main navigation">
+          <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2" aria-label="Main navigation">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-sm font-medium transition-colors hover:text-accent ${
-                  location.pathname === item.path ? "text-accent" : "text-foreground"
-                }`}
+                className={cn(
+                  "relative px-4 py-2 text-sm font-medium transition-all duration-200 rounded-lg",
+                  "hover:bg-accent/10 hover:text-accent",
+                  location.pathname === item.path 
+                    ? "text-accent bg-accent/10" 
+                    : "text-foreground/80 hover:text-foreground"
+                )}
                 aria-current={location.pathname === item.path ? "page" : undefined}
               >
                 {item.name}
+                {location.pathname === item.path && (
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-accent rounded-full"></span>
+                )}
               </Link>
             ))}
           </nav>
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Button asChild variant="default" size="lg" className="rounded-full">
+            <Button 
+              asChild 
+              variant="default" 
+              size="lg" 
+              className="rounded-full bg-gradient-to-r from-accent to-blue-bright hover:shadow-lg transition-all duration-300"
+            >
               <Link to="/contact">Get Started</Link>
             </Button>
           </div>
@@ -120,44 +162,75 @@ const Header = () => {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-foreground hover:text-accent transition-colors"
+            className={cn(
+              "lg:hidden p-2 rounded-lg transition-all duration-200",
+              "text-foreground/80 hover:text-foreground hover:bg-accent/10"
+            )}
             aria-label="Toggle menu"
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-menu"
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            <div className="relative w-6 h-6">
+              <Menu 
+                size={24} 
+                className={cn(
+                  "absolute inset-0 transition-all duration-300",
+                  isMobileMenuOpen ? "opacity-0 rotate-90 scale-50" : "opacity-100 rotate-0 scale-100"
+                )} 
+              />
+              <X 
+                size={24} 
+                className={cn(
+                  "absolute inset-0 transition-all duration-300",
+                  isMobileMenuOpen ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-50"
+                )} 
+              />
+            </div>
           </button>
         </div>
 
         {/* Mobile Menu */}
-        {isMobileMenuOpen && (
+        <div className={cn(
+          "lg:hidden overflow-hidden transition-all duration-300 ease-in-out",
+          isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        )}>
           <nav 
             id="mobile-menu"
-            className="lg:hidden mt-4 pb-4 animate-fade-in bg-background/95 backdrop-blur-md -mx-4 px-4 border-t border-border/10"
+            className="pt-4 pb-6 border-t border-border/20"
             aria-label="Mobile navigation"
           >
-            <div className="flex flex-col space-y-2 pt-2">
+            <div className="flex flex-col space-y-1">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`text-base font-medium transition-colors hover:text-accent px-4 py-2.5 ${
-                    location.pathname === item.path ? "text-accent bg-accent/10 rounded-lg" : "text-foreground"
-                  }`}
+                  className={cn(
+                    "px-4 py-3 text-base font-medium rounded-lg transition-all duration-200",
+                    "hover:bg-accent/10 hover:text-accent",
+                    location.pathname === item.path 
+                      ? "text-accent bg-accent/10" 
+                      : "text-foreground/80"
+                  )}
                   aria-current={location.pathname === item.path ? "page" : undefined}
                 >
                   {item.name}
                 </Link>
               ))}
-              <Button asChild variant="default" size="lg" className="rounded-full mt-2">
-                <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+              <Button 
+                asChild 
+                variant="default" 
+                size="lg" 
+                className="rounded-full mt-4 w-full bg-gradient-to-r from-accent to-blue-bright"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <Link to="/contact">
                   Get Started
                 </Link>
               </Button>
             </div>
           </nav>
-        )}
+        </div>
       </nav>
     </header>
   );

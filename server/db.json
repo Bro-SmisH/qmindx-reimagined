@@ -1,0 +1,222 @@
+{
+  "services": [
+    {
+      "id": "1",
+      "title": "Custom Software Development",
+      "description": "Build scalable, secure, and high-performance software solutions tailored to your business needs.",
+      "icon": "💻",
+      "features": [
+        "Full-stack development",
+        "Agile methodology",
+        "Quality assurance"
+      ],
+      "link": "/services/web-development"
+    },
+    {
+      "id": "2",
+      "title": "AI & Machine Learning",
+      "description": "Leverage cutting-edge AI and ML technologies to automate processes and gain insights.",
+      "icon": "🤖",
+      "features": [
+        "Predictive analytics",
+        "NLP solutions",
+        "Computer vision"
+      ],
+      "link": "/services/ai-solutions"
+    },
+    {
+      "id": "3",
+      "title": "Cloud Solutions",
+      "description": "Migrate to the cloud and optimize your infrastructure for scalability and performance.",
+      "icon": "☁️",
+      "features": [
+        "Cloud migration",
+        "DevOps",
+        "Infrastructure management"
+      ],
+      "link": "/services/cloud-services"
+    },
+    {
+      "id": "4",
+      "title": "Mobile Development",
+      "description": "Create intuitive and powerful mobile applications for iOS and Android platforms.",
+      "icon": "📱",
+      "features": [
+        "Native & cross-platform",
+        "UI/UX design",
+        "App store deployment"
+      ],
+      "link": "/services/mobile-development"
+    },
+    {
+      "id": "5",
+      "title": "Blockchain & Web3",
+      "description": "Build decentralized applications and integrate blockchain technology into your business.",
+      "icon": "⛓️",
+      "features": [
+        "Smart contracts",
+        "DeFi solutions",
+        "NFT platforms"
+      ],
+      "link": "/services/blockchain-web3"
+    },
+    {
+      "id": "6",
+      "title": "Data Analytics",
+      "description": "Transform your data into actionable insights with advanced analytics and visualization.",
+      "icon": "📊",
+      "features": [
+        "Data visualization",
+        "Business intelligence",
+        "Real-time analytics"
+      ],
+      "link": "/services/data-analytics"
+    },
+    {
+      "title": "Selenium Automation",
+      "description": "Selenium is an open-source tool that is used for automating the tests carried out on web browsers.",
+      "slug": "selenium-automation",
+      "link": "/services/selenium-automation",
+      "id": "4a76"
+    },
+    {
+      "id": "d7d7",
+      "title": "data eng",
+      "description": "data eng",
+      "slug": "data-eng",
+      "link": "/services/data-eng"
+    }
+  ],
+  "caseStudies": [
+    {
+      "id": "1",
+      "title": "E-commerce Platform Modernization",
+      "client": "RetailCorp",
+      "category": "E-commerce",
+      "description": "Completely redesigned and modernized the e-commerce platform, resulting in 150% increase in conversion rates and 60% improvement in page load times.",
+      "technologies": [
+        "React",
+        "Node.js",
+        "AWS",
+        "PostgreSQL"
+      ],
+      "results": "150% increase in conversions, 60% faster load times",
+      "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
+      "link": "/case-studies/ecommerce-modernization"
+    },
+    {
+      "id": "2",
+      "title": "AI-Powered Healthcare Analytics",
+      "client": "MediTech Solutions",
+      "category": "Healthcare",
+      "description": "Developed an AI-powered analytics platform that processes medical data to provide predictive insights for patient care and operational efficiency.",
+      "technologies": [
+        "Python",
+        "TensorFlow",
+        "React",
+        "MongoDB"
+      ],
+      "results": "40% improvement in diagnostic accuracy, 30% reduction in costs",
+      "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop",
+      "link": "/case-studies/healthcare-ai-analytics"
+    },
+    {
+      "id": "3",
+      "title": "FinTech Mobile Banking App",
+      "client": "NeoBank",
+      "category": "FinTech",
+      "description": "Built a secure and user-friendly mobile banking application with real-time transaction processing and advanced security features.",
+      "technologies": [
+        "React Native",
+        "Node.js",
+        "PostgreSQL",
+        "Redis"
+      ],
+      "results": "1M+ downloads, 4.8★ app store rating",
+      "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop",
+      "link": "/case-studies/fintech-mobile-app"
+    },
+    {
+      "id": "4",
+      "title": "Supply Chain Optimization",
+      "client": "LogiCorp",
+      "category": "Logistics",
+      "description": "Implemented an IoT-enabled supply chain management system with real-time tracking and predictive analytics.",
+      "technologies": [
+        "IoT",
+        "Python",
+        "React",
+        "InfluxDB"
+      ],
+      "results": "25% reduction in delivery times, 35% cost savings",
+      "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=600&fit=crop",
+      "link": "/case-studies/supply-chain-optimization"
+    }
+  ],
+  "blogPosts": [
+    {
+      "id": "1",
+      "title": "The Future of AI in Enterprise Software Development",
+      "excerpt": "Explore how artificial intelligence is revolutionizing enterprise software development, from automated coding to intelligent testing.",
+      "author": "Dr. Alex Martinez",
+      "date": "2024-01-15",
+      "readTime": "8 min read",
+      "category": "AI & ML",
+      "tags": [
+        "AI",
+        "Enterprise",
+        "Development"
+      ],
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop",
+      "link": "/blog/ai-enterprise"
+    },
+    {
+      "id": "2",
+      "title": "Cloud Infrastructure Best Practices for 2024",
+      "excerpt": "Learn the latest cloud infrastructure best practices that will help you build scalable, secure, and cost-effective applications.",
+      "author": "Sarah Williams",
+      "date": "2024-01-12",
+      "readTime": "10 min read",
+      "category": "Cloud Computing",
+      "tags": [
+        "Cloud",
+        "Infrastructure",
+        "DevOps"
+      ],
+      "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop",
+      "link": "/blog/cloud-infrastructure"
+    },
+    {
+      "id": "3",
+      "title": "Complete Guide to Web3 Development",
+      "excerpt": "A comprehensive guide to getting started with Web3 development, including blockchain basics, smart contracts, and DApps.",
+      "author": "Marcus Johnson",
+      "date": "2024-01-10",
+      "readTime": "15 min read",
+      "category": "Blockchain",
+      "tags": [
+        "Web3",
+        "Blockchain",
+        "Smart Contracts"
+      ],
+      "image": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=400&fit=crop",
+      "link": "/blog/web3-development"
+    },
+    {
+      "id": "4",
+      "title": "Mobile App Development Trends to Watch",
+      "excerpt": "Discover the latest trends in mobile app development, from cross-platform frameworks to emerging technologies.",
+      "author": "Jennifer Liu",
+      "date": "2024-01-08",
+      "readTime": "6 min read",
+      "category": "Mobile Development",
+      "tags": [
+        "Mobile",
+        "iOS",
+        "Android"
+      ],
+      "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=400&fit=crop",
+      "link": "/blog/mobile-trends"
+    }
+  ]
+}

@@ -5,20 +5,17 @@ import StatsSection from "@/components/home/StatsSection";
 import AboutSection from "@/components/home/AboutSection";
 import ServicesSection from "@/components/home/ServicesSection";
 import ContactSection from "@/components/home/ContactSection";
+import { PageLayout } from "@/components/layout/Layout";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <Header />
-  <main id="main-content" role="main" style={{ paddingTop: 'var(--header-offset)' }}>
-        <HeroSection />
-        <StatsSection />
-        <AboutSection />
-        <ServicesSection />
-        <ContactSection />
-      </main>
-      <Footer />
-    </div>
+    <PageLayout>
+      <HeroSection />
+      <StatsSection />
+      <AboutSection />
+      <ServicesSection />
+      <ContactSection />
+    </PageLayout>
   );
 };
 

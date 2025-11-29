@@ -19,7 +19,7 @@ const BlockchainWeb3 = () => {
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-6 text-white">
                 Blockchain & Web3
               </h1>
-              <p className="text-xl text-center text-gray-200 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-center text-primary-foreground/80 max-w-3xl mx-auto leading-relaxed">
                 Next-generation blockchain solutions for the decentralized web.
               </p>
             </FadeInUp>
