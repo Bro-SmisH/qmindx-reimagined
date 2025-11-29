@@ -48,7 +48,7 @@ const About = () => {
                 <span className="text-accent-foreground font-semibold text-sm uppercase tracking-wider">
                   About QmindX
                 </span>
-                <H1 className="!text-4xl md:!text-5xl lg:!text-6xl mt-4 mb-6">
+                <H1 className="!text-4xl md:!text-5xl lg:!text-6xl mt-4 mb-6 text-white">
                   Transforming Businesses Through Innovation & Technology
                 </H1>
                 <Body className="!text-lg md:!text-xl text-primary-foreground/80 max-w-2xl mx-auto">
@@ -118,7 +118,7 @@ const About = () => {
                   <div className="relative">
                     {/* Timeline Line */}
                     <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-accent/20"></div>
-                    
+
                     {/* Timeline Items */}
                     <div className="space-y-12">
                       {milestones.map((milestone, index) => (
